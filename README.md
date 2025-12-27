@@ -7,21 +7,13 @@ This repository contains a full-stack data pipeline designed to collect, process
 ## System Architecture
 The pipeline follows a multi-stage process to ensure data integrity:
 
-```mermaid
-graph TD
-    A[(Amazon S3)] -->|Historical Data| B[DuckDB Analysis]
-    C[OpenAQ API] -->|Real-time Data| D[run-sync.bat]
-    B --> D
-    D -->|Transform & Audit| E[(PostgreSQL Docker)]
-    E --> F[Streamlit Dashboard]
-    F -->|2025 Forecast| G[User]
 Historical Extraction: Data is pulled from Amazon S3 storage.
 Analytical Querying: DuckDB is used to perform high-speed SQL queries on the S3 dataset for initial exploration.
 Real-Time Ingestion: Latest sensor readings are fetched via the OpenAQ API.
 Data Merging: Historical and real-time data are unified and loaded into a PostgreSQL database (running in Docker).
 Statistical Audit: Automated ADF Tests validate data stationarity for the time-series model.Visualization: A Streamlit dashboard displays the final forecasts and sensor trends.
 
-Tech Stack
+## Tech Stack
 Cloud: Amazon S3
 Databases: DuckDB (Analysis), PostgreSQL (Production/Docker)
 Modeling: Time Series Forecasting
@@ -29,13 +21,13 @@ Frontend: Streamlit
 Automation: Windows Batch Scripting
 Environment: Conda (nakuru-env)
 
-Prerequisites:
+## Prerequisites:
 Before running the pipeline, ensure you have:
 Docker Desktop: Installed and running (for the Postgres container).
 Conda/Anaconda: To manage the Python environment.
 Access: Valid API keys for OpenAQ and AWS CLI configured for S3 access.
 
-How to Run the Project
+### How to Run the Project
 1. Setup EnvironmentThis project uses a lean requirements.txt generated via pipreqs . --force.
 
 pip install -r requirements.txt
