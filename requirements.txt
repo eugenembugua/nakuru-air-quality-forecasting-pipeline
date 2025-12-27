@@ -1,0 +1,11 @@
+duckdb==1.2.1
+joblib==1.5.2
+numpy==2.4.0
+pandas==2.3.3
+plotly==6.5.0
+psycopg2==2.9.11
+Requests==2.32.5
+SQLAlchemy==2.0.45
+statsmodels==0.14.6
+streamlit==1.52.2
+-e .

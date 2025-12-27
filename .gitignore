@@ -1,0 +1,18 @@
+#Secrets and private config
+secrets.json
+#Virtual enviromnent
+nakuru-env
+#Python cache
+__pycache__/
+*.pyc
+#Logs
+*.log
+#VS Code
+.vscode/
+.idea/
+Nakur_Air_Quality.egg-info
+#OS files
+.DS_Store
+Thumbs.db
+nakuru_air_quality.db nakuru_air_quality.db
+nakuru_air_quality.db
